@@ -1,24 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ERIC_NAME from './constants';
+import {
+  CLAUDIA_NAME,
+  MOTHER_NAME,
+  testFunction, //export function
+  testFunction2
+} from "./constants";
 
+import FunctionComponent from "./FunctionComponent/FunctionComponent";
+import ClassComponent from "./ClassComponent/ClassComponent";
+
+import StatefulCounter from "./StatefulCounter/StatefulCounter";
+
+import HelloWorld from "./HelloWorld/HelloWorld";
+
+import InputBox from "./InputBox/InputBox";
 function App() {
+  testFunction(); //outside return doesn't need curly braces
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*renders both lines same as below*/}
+      {testFunction2(CLAUDIA_NAME)}
+      {CLAUDIA_NAME}
+
+      {/*two lines below the same*/}
+      <FunctionComponent> </FunctionComponent>
+      <FunctionComponent />
+
+      <ClassComponent />
+
+      <StatefulCounter />
+
+      <HelloWorld />
+
+      <InputBox />
+
     </div>
   );
 }
